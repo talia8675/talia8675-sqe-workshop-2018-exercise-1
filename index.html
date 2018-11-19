@@ -7,8 +7,8 @@
             table {
                 width: 100%;
                 height: 100%;
-            }
 
+            }
             .textAreaWrapper {
                 width: 100%;
                 height: 80vh;
@@ -18,6 +18,8 @@
                 width: 80%;
                 height: 95%;
             }
+
+
         </style>
     </head>
     <body>
@@ -30,7 +32,7 @@
                 </td>
                 <td>
                     <div>
-                        <label>Parsed code here</label>
+                        <label>Table</label>
                     </div>
                 </td>
             </tr>
@@ -42,7 +44,13 @@
                 </td>
                 <td>
                     <div class="textAreaWrapper">
-                        <textarea id="parsedCode" title="Parse code"></textarea>
+                        <div style="overflow-x:auto;">
+                            <table id="theTable" border="1">
+                                <tbody id="tbody"></tbody>
+                            </table>
+
+
+                        </div>
                     </div>
                 </td>
             </tr>
