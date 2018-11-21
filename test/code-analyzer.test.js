@@ -163,11 +163,12 @@ describe('for statement', () => {
     it('for', () => {
         assert.deepEqual(
             itercode(parseCode('for (i=0; i<5; i++){}')),
-            [{Line: 1, Type: 'for statement', Name:'', Condition: '(i=0; i < 5; i++)',Value:''}]
+            [{Line: 1, Type: 'for statement', Name:'', Condition: '(i = 0; i < 5; i++)',Value:''}]
         );
         assert.deepEqual(
-            itercode(parseCode('for (let i=0; i<5; i++){}')),
-            [{Line: 1, Type: 'for statement', Name:'', Condition: '(let i=0; i < 5; i++)',Value:''}]
+            itercode(parseCode('for (let i=0; i<5; i++) d=9;')),
+            [{Line: 1, Type: 'for statement', Name:'', Condition: '(let i = 0; i < 5; i++)',Value:''},
+                {Line: 1, Type: 'assignment expression', Name:'d', Condition: '',Value:'9'}]
         );
     });
 });
