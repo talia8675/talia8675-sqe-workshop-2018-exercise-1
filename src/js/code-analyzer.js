@@ -92,7 +92,6 @@ function elseIfStatement(rows, alt){
     if(alt.consequent.type === 'BlockStatement')
         loopItercode(rows, alt.consequent);
     else funcByType[alt.consequent.type](alt.consequent, rows);
-
     if (alt.alternate != null && alt.alternate.type === 'IfStatement')
         elseIfStatement(rows, alt.alternate);
     else //if(alt.alternate != null)
